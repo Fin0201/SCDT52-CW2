@@ -11,20 +11,11 @@ class ProductController {
 
     public function create_product(array $product) 
     {
-        try {
-
-            $sql = "INSERT INTO products(name, description, price, image) 
-                    VALUES (:name, :description, :price, :image)"; 
-
-            return $this->db->runSQL($sql, $product)->fetch();
-
-        } catch (PDOException $e) {
-
-            if ($e->getCode() == 23000) { //Could be 1062
-                return false;
-            }
-            throw $e;
-        }
+        
+        $sql = "INSERT INTO products(name, description, price, image)
+        VALUES (:name, :description, :price, :image);";
+        $this->db->runSQL($sql, $product);
+        return $this->db->lastInsertId();
     }
 
     public function get_product_by_id(int $id)
@@ -42,7 +33,7 @@ class ProductController {
 
     public function update_product(array $product)
     {
-        $sql = "UPDATE products SET name = :name, description = :description, price = :price, iamge = :image WHERE id = :id";
+        $sql = "UPDATE products SET name = :name, description = :description, price = :price, image = :image WHERE id = :id";
         return $this->db->runSQL($sql, $product)->execute();
     }
 
