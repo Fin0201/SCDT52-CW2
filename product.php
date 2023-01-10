@@ -1,4 +1,5 @@
 <?php require __DIR__ . "/inc/header.php"; ?>
+<?php require __DIR__ . "/components/products.php"; ?>
      
    <h1>Products!</h1>
 

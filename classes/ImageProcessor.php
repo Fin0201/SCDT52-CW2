@@ -4,15 +4,15 @@ class ImageProcessor {
   
     public static function upload($image, $directory = './images/uploads', $sizeLimit = 1000000, $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'])
     {
-        // Check if the file is an image type
-        if (exif_imagetype($image['tmp_name']) === false) {
-            throw new Exception('The uploaded file is not an image.');
-        }
+        // // Check if the file is an image type
+        // if (exif_imagetype($image['tmp_name']) === false) {
+        //     throw new Exception('The uploaded file is not an image.');
+        // }
 
-        // Check if the file size is less than the limit
-        if ($image['size'] > $sizeLimit) {
-            throw new Exception('The uploaded image exceeds the size limit.');
-        }
+        // // Check if the file size is less than the limit
+        // if ($image['size'] > $sizeLimit) {
+        //     throw new Exception('The uploaded image exceeds the size limit.');
+        // }
 
         // Check if the file has a valid extension
         $ext = strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));
@@ -21,11 +21,11 @@ class ImageProcessor {
         }
 
         // Check if the MIME type of the file matches the extension
-        $finfo = new finfo(FILEINFO_MIME_TYPE);
-        $mime = $finfo->file($image['tmp_name']);
-        if (strpos($mime, $ext) === false) {
-            throw new Exception('The MIME type of the uploaded image does not match the extension.');
-        }
+        // $finfo = new finfo(FILEINFO_MIME_TYPE);
+        // $mime = $finfo->file($image['tmp_name']);
+        // if (strpos($mime, $ext) === false) {
+        //     throw new Exception('The MIME type of the uploaded image does not match the extension.');
+        // }
 
         // Ensure that the destination directory exists and is writable
         if (!is_dir($directory)) {

@@ -24,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
               'image' =>  $image['value'] 
               ];
 
+      $member = $controllers->products()->create_product($args);
+
       $id = $controllers->products()->create_product($args);
 
       if(!empty($id) && $id > 0) {
