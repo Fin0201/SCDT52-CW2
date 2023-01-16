@@ -11,8 +11,8 @@ class ReviewController {
 
     public function create_review(array $review) 
     {
-        $sql = "INSERT INTO reviews(review, userId)
-        VALUES (:review, userId);";
+        $sql = "INSERT INTO reviews(reviewText, userId)
+        VALUES (:reviewText, :userId);";
         $this->db->runSQL($sql, $review);
         return $this->db->lastInsertId();
     }

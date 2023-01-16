@@ -11,7 +11,6 @@ class ProductController {
 
     public function create_product(array $product) 
     {
-        
         $sql = "INSERT INTO products(name, description, price, image)
         VALUES (:name, :description, :price, :image);";
         $this->db->runSQL($sql, $product);

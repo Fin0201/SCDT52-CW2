@@ -13,7 +13,7 @@ class Controllers {
 
         $type ='mysql';
         $server = '127.0.0.1';
-        $db = 'shop';
+        $db = 'flowershop';
         $port = '3306';
         $charset = 'latin1';
 

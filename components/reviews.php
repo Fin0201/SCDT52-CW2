@@ -1,20 +1,20 @@
 <?php
 require_once './inc/functions.php';
 
- $products =$controllers->products()->get_all_products();
+$reviews =$controllers->reviews()->get_all_reviews();
 
-foreach ($products as $product):
+foreach ($reviews as $review):
 ?>
+    <?php $members =$controllers->members()->get_member_by_id($review['userId']); ?>
     <div class="text-center col-4">
         <div class="container py-5 h-75">
             <div class="row d-flex justify-content-center align-items-center h-100">
-                <a class="card product-link" style="width: 18rem;" href="./product.php?id=<?= $product['id'] ?>">
-                    <img src="<?= $product['image'] ?>" class="card-img-top" alt="image of <?= $product['name'] ?>">
+                <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title"><?= $product['name'] ?></h5>
-                        <p class="card-text">£<?= $product['price'] ?></p>
+                        <p class="card-title"><?= $members['firstname'] ?> <?= $members['lastname'] ?></p>
+                        <h6 class="card-text"><?= $review['reviewText'] ?></h6>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
