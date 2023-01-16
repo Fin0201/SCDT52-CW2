@@ -24,6 +24,7 @@
                'password' => password_hash($password['value'], PASSWORD_DEFAULT)];
 
       $member = $controllers->members()->register_member($args);
+      echo($member);
       if ($member) {
         redirect("login", ["error" => "Please login with your new account"]);
       } else {
