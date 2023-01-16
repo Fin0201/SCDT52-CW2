@@ -6,7 +6,6 @@ $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-
     $name = InputProcessor::processString($_POST['name'] ?? '');
     $description = InputProcessor::processString($_POST['description'] ?? '');
     $price = InputProcessor::processString($_POST['price'] ?? '');
@@ -23,8 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
               'price' => $price['value'] ,
               'image' =>  $image['value'] 
               ];
-
-      $member = $controllers->products()->create_product($args);
 
       $id = $controllers->products()->create_product($args);
 
@@ -65,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     
     
                 <div class="form-outline mb-4">
-                  <input type="number" id="price" name="price" class="form-control form-control-lg" placeholder="Price" required value="<?= htmlspecialchars($price['value'] ?? '') ?>"/>
+                  <input type="number" step="0.01" id="price" name="price" class="form-control form-control-lg" placeholder="Price" required value="<?= htmlspecialchars($price['value'] ?? '') ?>"/>
                   <span class="text-danger"><?= $price['error'] ?? '' ?></span>
                 </div>
     
@@ -77,9 +74,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                
                 <?= isset($_GET['errmsg']) ? $message = $_GET['errmsg'] : '' ?>
 
-                <div class="alert alert-danger mt-4" role="alert">
-                  <?= $message ?? '' ?>
-                </div>
+                <?php if ($message): ?>
+                  <div class="alert alert-danger mt-4" role="alert">
+                    <?= $message ?? '' ?>
+                  </div>
+               <?php endif ?>
 
               </div>
             </div>

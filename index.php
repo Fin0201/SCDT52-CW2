@@ -9,4 +9,7 @@
     </div>
 </section>  
 
+
+<?php require __DIR__ . "/components/products.php"; ?>
+
 <?php require __DIR__ . "/inc/footer.php"; ?>

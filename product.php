@@ -1,14 +1,14 @@
 <?php require __DIR__ . "/inc/header.php"; ?>
-<?php require __DIR__ . "/components/products.php"; ?>
-     
-   <h1>Products!</h1>
+
+<section class="vh-100 text-center">
+    <div class="container py-5 h-75">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+      <?php require __DIR__ . "/components/product-details.php"; ?>
+      </div>
+    </div>
+</section>
 
 
-   <div class="input-group rounded">
-      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-      <span class="input-group-text border-0" id="search-addon">
-         <i class="fas fa-search"></i>
-      </span>
-   </div>
+
 
 <?php require __DIR__ . "/inc/footer.php"; ?>

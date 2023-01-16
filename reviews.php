@@ -1,1 +1,5 @@
-<style><?php include "./css/styleSheet" ?></style>
+<?php require __DIR__ . "/inc/header.php"; ?>
+
+
+
+<?php require __DIR__ . "/inc/footer.php"; ?>
