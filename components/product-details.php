@@ -9,7 +9,7 @@ if (!empty($id)) {
 
     if ($product): ?>
     
-        <div class="card" style="width: 18rem;">
+        <div class="card product-text" style="width: 18rem;">
             <img src="<?= $product['image'] ?>" class="card-img-top" alt="image of <?= $product['description'] ?>">
             <div class="card-body">
                 <h5 class="card-title"><?= $product['name'] ?></h5>

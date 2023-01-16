@@ -1,6 +1,12 @@
-<?php require __DIR__ . "/inc/header.php"; ?>
+<?php
+    require __DIR__ . "/inc/header.php";
 
-<h1 class="text-center">Welcome!</h1>
+    require_once './inc/functions.php';
+
+    $products =$controllers->products()->get_all_products();
+?>
+
+<h1 class="text-center">Search for a product!</h1>
 <section class="vh-100 text-center">
     <div class="container py-5 h-75">
       <div class="row d-flex justify-content-center align-items-center h-100">

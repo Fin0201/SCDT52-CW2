@@ -1,7 +1,7 @@
 <?php
   $filename = basename($_SERVER['PHP_SELF']);
-  $title = substr($filename, 0, strrpos($filename, "."));
-  $title = ucwords(str_replace('-', ' ', $title));
+  $default_title = substr($filename, 0, strrpos($filename, "."));
+  $default_title = ucwords(str_replace('-', ' ', $default_title));
 ?>
 
 
@@ -12,15 +12,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="icon" href="./images/favicon.ico">
-    <title> <?= $title ?? 'Welcome' ?> </title>
+    <title> <?= $title ?? $default_title ?> </title>
   </head>
   <body class="bg-primary">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
-  <a class="navbar-brand" href="./index.php">Online Shop</a>
-  <a class="navbar-brand" href="./reviews.php">Reviews</a>
+  <a class="navbar-brand" href="./index.php">Judith Goss Florists</a>
+  <a class="navbar-brand" href="./index.php">Home</a>
+  <a class="navbar-brand" href="./search-products.php">Search Products</a>
+  <a class="navbar-brand" href="./review.php">Reviews</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
