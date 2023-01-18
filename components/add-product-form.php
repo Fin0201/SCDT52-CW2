@@ -4,6 +4,8 @@ require_once './inc/functions.php';
 
 $message = '';
 
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $name = InputProcessor::processString($_POST['name'] ?? '');

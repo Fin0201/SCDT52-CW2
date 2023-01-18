@@ -5,28 +5,30 @@ $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-   $reviewText = InputProcessor::processString($_POST['reviewText'] ?? '');
+   if (isset($_POST["leaveReview"]))
+   {
+      $reviewText = InputProcessor::processString($_POST['reviewText'] ?? '');
 
-   $valid = $reviewText['valid'];
+      $valid = $reviewText['valid'];
 
-   if($valid) {
-      $args = [
-         'reviewText' => $reviewText['value'],
-         'userId' => $_SESSION['user']['id']];
+      if($valid) {
+         $args = [
+            'reviewText' => $reviewText['value'],
+            'userId' => $_SESSION['user']['id']];
 
-      $id = $controllers->reviews()->create_review($args);
+         $id = $controllers->reviews()->create_review($args);
 
-      if(!empty($id) && $id > 0) {
-         redirect("review", ["message" => "Review submitted!"]);
+         if(!empty($id) && $id > 0) {
+            redirect("review", ["message" => "Review submitted!"]);
+         }
+         else {
+         $message = "Error adding review."; //Change
+         }
       }
       else {
-        $message = "Error adding review."; //Change
+         $message = "Please fix the following errors: ";
       }
-    }
-    else {
-       $message = "Please fix the following errors: ";
    }
-
 }
 ?>
 
@@ -40,11 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       
                   <h3 class="mb-2">Leave A Review</h3>
                   <div class="form-outline mb-4">
-                     <input type="text" id="reviewText" name="reviewText" class="form-control form-control-lg" placeholder="Review" required value="<?= htmlspecialchars($reviewText['value'] ?? '') ?>"/>
+                     <input type="text" id="reviewText" name="reviewText" class="form-control form-control-lg" placeholder="Review" maxlength="255" required value="<?= htmlspecialchars($reviewText['value'] ?? '') ?>"/>
                      <span class="text-danger"><?= $reviewText['error'] ?? '' ?></span>
                   </div>
       
-                  <button class="btn btn-primary btn-lg w-100 mb-4" type="submit">Add Review</button>
+                  <button name="leaveReview" class="btn btn-primary btn-lg w-100 mb-4" type="submit">Add Review</button>
                
                   <?= isset($_GET['errmsg']) ? $message = $_GET['errmsg'] : '' ?>
 

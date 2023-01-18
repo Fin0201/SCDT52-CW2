@@ -2,16 +2,17 @@
 session_start();
 require_once './inc/functions.php';
 
+$reviews =$controllers->reviews()->get_all_reviews();
+
 if (isset($_POST["delete"]))
 {
     $id = (int)$_POST['delete'];
 
     $del_product = $controllers->products()->delete_product($id);
+
 }
 
-$products =$controllers->products()->get_all_products();
-
-foreach ($products as $product):
+foreach ($results as $product):
 ?>
     <div class="text-center col-4">
         <div class="container py-5 h-75">

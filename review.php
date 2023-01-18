@@ -5,7 +5,13 @@
     $message =  isset($_GET['message']) ? htmlspecialchars($_GET['message']) : '';
 ?>
 
-<h1 class="text-center">Leave A Review! <?= $message ?></h1>
+<h1 class="text-center"> <?php
+if ($message) {
+    echo $message;
+} else {
+    echo 'Leave a Review!';
+}
+?></h1>
 
 <?php
     if (!isset($_SESSION['user'])) { ?>

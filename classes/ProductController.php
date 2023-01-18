@@ -24,6 +24,14 @@ class ProductController {
         return $this->db->runSQL($sql, $args)->fetch();
     }
 
+    public function get_product_by_name(string $name)
+    {
+        $name = "%{$name}%";
+        $sql = "SELECT * FROM products WHERE name LIKE :name";
+        $args = ['name' => $name];
+        return $this->db->runSQL($sql, $args)->fetchAll();
+    }
+
     public function get_all_products()
     {
         $sql = "SELECT * FROM products";
