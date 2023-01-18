@@ -29,6 +29,13 @@ class ReviewController {
         $sql = "SELECT * FROM reviews";
         return $this->db->runSQL($sql)->fetchAll();
     }
+
+    public function delete_review(int $id)
+    {
+        $sql = "DELETE FROM reviews WHERE id = :id";
+        $args = ['id' => $id];
+        return $this->db->runSQL($sql, $args)->execute();
+    }
 }
 
 ?>

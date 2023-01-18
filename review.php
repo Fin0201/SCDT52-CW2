@@ -1,6 +1,6 @@
 <?php
-    require __DIR__ . "/inc/header.php";
     session_start();
+    require __DIR__ . "/inc/header.php";
 
     $message =  isset($_GET['message']) ? htmlspecialchars($_GET['message']) : '';
 ?>
