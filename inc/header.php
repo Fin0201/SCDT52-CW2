@@ -20,10 +20,10 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
-  <a class="navbar-brand" href="./index.php">Judith Goss Florists</a>
-  <a class="navbar-brand" href="./index.php">Home</a>
-  <a class="navbar-brand" href="./search-products.php">Search Products</a>
-  <a class="navbar-brand" href="./review.php">Reviews</a>
+    <a href="./index.php" style="margin-right:1.5em;"><img src="./images/logo 2.png" alt="Judith Goss Florists" style="width:auto; height:5em;"></a>
+    <a class="navbar-brand" href="./index.php">Home</a>
+    <a class="navbar-brand" href="./search-product.php">Search Products</a>
+    <a class="navbar-brand" href="./review.php">Reviews</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
