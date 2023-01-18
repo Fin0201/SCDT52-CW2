@@ -14,16 +14,54 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Dumping database structure for flowershop
+CREATE DATABASE IF NOT EXISTS `flowershop` /*!40100 DEFAULT CHARACTER SET utf16 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `flowershop`;
+
+-- Dumping structure for table flowershop.products
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL,
+  `description` mediumtext CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL,
+  `price` float NOT NULL,
+  `image` mediumtext CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf16;
+
 -- Dumping data for table flowershop.products: ~2 rows (approximately)
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`) VALUES
 	(22, 'Bespoke spring hand-tied bouquet', 'This charming florists choice spring themed hand-tied will be created using the very freshest seasonal flowers available on the day from their in-store collection, so, whilst your gift will look different to the one pictured, itâ€™ll still be just as lovely.', 75, './images/uploads/63c57c246e61c.jpg'),
 	(33, 'Spring Hand-tied Bouquet', 'This charming florists choice spring themed hand-tied will be created using the very freshest seasonal flowers available on the day from their in-store collection, so, whilst your gift will look different to the one pictured, itâ€™ll still be just as lovely.', 45, './images/uploads/63c872e0ef19f.jpg');
+
+-- Dumping structure for table flowershop.reviews
+CREATE TABLE IF NOT EXISTS `reviews` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `reviewText` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci DEFAULT NULL,
+  `userId` int DEFAULT NULL,
+  `createdOn` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf16;
 
 -- Dumping data for table flowershop.reviews: ~3 rows (approximately)
 INSERT INTO `reviews` (`id`, `reviewText`, `userId`, `createdOn`) VALUES
 	(27, 'The flowers here look great!', 16, '2023-01-18 22:20:05'),
 	(28, 'This is my test review', 24, '2023-01-18 22:20:25'),
 	(29, 'Admin test review', 27, '2023-01-18 22:20:52');
+
+-- Dumping structure for table flowershop.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(255) DEFAULT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
+  `password` text,
+  `email` varchar(255) DEFAULT NULL,
+  `accountType` varchar(10) CHARACTER SET utf16 COLLATE utf16_general_ci DEFAULT 'member',
+  `createdOn` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `modifiedOn` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf16;
 
 -- Dumping data for table flowershop.users: ~3 rows (approximately)
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password`, `email`, `accountType`, `createdOn`, `modifiedOn`) VALUES
