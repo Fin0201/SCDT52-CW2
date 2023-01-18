@@ -34,7 +34,7 @@ if ($message) {
         if (!$message) {
             require __DIR__ . "/components/review-form.php";
         } else { ?>
-                <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                         <div class="alert alert-info mt-4 text-center" role="alert">
                             <?= $message ?? '' ?>
@@ -47,7 +47,7 @@ if ($message) {
 
 <section class="vh-100 text-center">
     <div class="container py-5 h-75">
-        <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="row d-flex justify-content-center align-items-center">
             <?php require __DIR__ . "/components/reviews.php"; ?>
         </div>
     </div>
