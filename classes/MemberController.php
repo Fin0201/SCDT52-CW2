@@ -53,7 +53,7 @@ class MemberController {
 
         } catch (PDOException $e) {
 
-            if ($e->getCode() == 23000) { //Could be 1062
+            if ($e->getCode() == 23000) {
                 return false;
             }
             throw $e;
