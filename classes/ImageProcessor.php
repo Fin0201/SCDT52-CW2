@@ -2,7 +2,7 @@
 
 class ImageProcessor {
   
-    public static function upload($image, $directory = './images/uploads', $sizeLimit = 1000000, $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'])
+    public static function upload($image, $directory = './images/uploads', $sizeLimit = 1000000, $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'])
     {
         // Check if the file is an image type
         if (exif_imagetype($image['tmp_name']) === false) {

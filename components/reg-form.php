@@ -1,5 +1,4 @@
 <?php
-  
   require_once './inc/functions.php';
 
   $message = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';

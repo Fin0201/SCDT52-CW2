@@ -20,7 +20,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#4daf86;">
   <div class="container-fluid">
-    <a href="./index.php" style="margin-right:1.5em;"><img src="./images/logo 2.png" alt="Judith Goss Florists" style="width:auto; height:5em;"></a>
+    <a href="./index.php" style="margin-right:1.5em;"><img src="./images/logo 2.png" alt="Judith Goss Florists" style="width:auto; height:8vh;"></a>
     <a class="navbar-brand" href="./index.php">Home</a>
     <a class="navbar-brand" href="./search-product.php">Search Products</a>
     <a class="navbar-brand" href="./review.php">Reviews</a>
