@@ -58,7 +58,7 @@
     require __DIR__ . "/inc/header.php"; 
 ?>
 
-<h1 class="text-center"><?= $_SESSION['user']['firstname'] ?? 'Member' ?>!</h1>
+<h1 class="text-center">Welcome <?= $_SESSION['user']['firstname'] ?? 'Member' ?>!</h1>
 
 
 <form method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>">
