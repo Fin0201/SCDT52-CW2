@@ -18,7 +18,7 @@
   </head>
   <body class="bg-primary">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#4daf86;">
   <div class="container-fluid">
     <a href="./index.php" style="margin-right:1.5em;"><img src="./images/logo 2.png" alt="Judith Goss Florists" style="width:auto; height:5em;"></a>
     <a class="navbar-brand" href="./index.php">Home</a>
